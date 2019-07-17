@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>학생 정보 화면</title>
+        <style>
+            table{
+                width: 60%;
+                height: 100px;
+                margin: auto;
+                text-align: center;
+            }
+            table, th, td {
+                border: 1px solid #bcbcbc;
+            }
+            #second {
+                top : 50px;
+            }
+            div.button{
+                position: absolute;
+                left: 45%;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+        <caption><%= name%> 19-1학기 성적</caption>
+        <thead>
+         <tr>
+            <th></th>
+            <th>구분</th>
+            <th>과목명</th>
+            <th>이수학점</th>
+            <th>학점</th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td><input type="text" name="div1" readonly="readonly" value=<%= div1 %>></td>
+            <td><input type="text" name="sub1" readonly="readonly" value=<%= sub1 %>></td>
+            <td><input type="text" name="grade1" readonly="readonly" value=<%= grade1 %>></td>
+            <td><input type="text" name="score1" readonly="readonly" value=<%= score1 %>></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td><input type="text" name="div2" readonly="readonly" value=<%= div2 %>></td>
+            <td><input type="text" name="sub2" readonly="readonly" value=<%= sub2 %>></td>
+            <td><input type="text" name="grade2" readonly="readonly" value=<%= grade2 %>></td>
+            <td><input type="text" name="score2" readonly="readonly" value=<%= score2 %>></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td><input type="text" name="div3" readonly="readonly" value=<%= div3 %>></td>
+            <td><input type="text" name="sub3" readonly="readonly" value=<%= sub3 %>></td>
+            <td><input type="text" name="grade3" readonly="readonly" value=<%= grade3 %>></td>
+            <td><input type="text" name="score3" readonly="readonly" value=<%= score3 %>></td>
+           </tr>
+           <tr>
+            <th>4</th>
+            <td><input type="text" name="div4" readonly="readonly" value=<%= div4 %>></td>
+            <td><input type="text" name="sub4" readonly="readonly" value=<%= sub4 %>></td>
+            <td><input type="text" name="grade4" readonly="readonly" value=<%= grade4 %>></td>
+            <td><input type="text" name="score4" readonly="readonly" value=<%= score4 %>></td>
+           </tr>
+           <tr>
+             <th>5</th>
+             <td><input type="text" name="div5" readonly="readonly" value=<%= div5 %>></td>
+             <td><input type="text" name="sub5" readonly="readonly" value=<%= sub5 %>></td>
+             <td><input type="text" name="grade5" readonly="readonly" value=<%= grade5 %>></td>
+             <td><input type="text" name="score5" readonly="readonly" value=<%= score5 %>></td>
+            </tr>
+            <tr>
+             <th>6</th>
+             <td><input type="text" name="div6" readonly="readonly" value=<%= div6 %>></td>
+             <td><input type="text" name="sub6" readonly="readonly" value=<%= sub6 %>></td>
+             <td><input type="text" name="grade6" readonly="readonly" value=<%= grade6 %>></td>
+             <td><input type="text" name="score6" readonly="readonly" value=<%= score6 %>></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="button"><button type="button" onclick="location.href='/home'">최종 정보 확인</button></div>
+    </body>
+</html>

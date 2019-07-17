@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>학생정보확인</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>정보 확인란</legend>        
+                <table>
+                    <tr>
+                        <td><label for="name" name="name">이름</label></td>
+                        <td><%= name1%></td>
+                    </tr>
+                    <tr>
+                        <td><label for="department" name="department">학과</label></td>
+                        <td><%= department1%></td>
+                    </tr>
+                    <tr>
+                        <td><label for="num" name="num">학번</label></td>
+                        <td><%= num1%></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </body>
+</html>
+
+<!--
+    "이름".$row[name]."<br/>";
+            "학과".$row[department]."<br/>";
+            "학번".$row[num]."<br/>";
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><% if(name){ %>
+                    <span class="name"><%= name %></span>
+                </p>
+                <p><% } else if(department){ %>
+                    <span class="department"><%= department></span>
+                </p>
+                <p>
+                <% } else if(num){ %>
+                    <span class="num"><%=num></span>
+                <% } %>
+-->
+

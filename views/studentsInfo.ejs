@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>학생 정보</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="/students" method="POST">
+            <fieldset>
+                <legend>학생 정보 입력</legend>
+                <table>
+                    <tr>
+                      <div>
+                        <td><label for="name">이름</label></td>
+                        <td><input id="name" type="text" name="name" readonly="readonly" value=<%= name %>></td>
+                      </div>
+                    </tr>
+                    <tr>
+                        <td><label for="department">학과</label></td>
+                        <td>
+                            <select name="department">
+                                <option selected="selected">----------선택----------</option>
+                                <optgroup label="공학/정보학부">
+                                    <option>산업경영공학과</option>
+                                    <option>기계과</option>
+                                    <option>토목과</option>
+                                    <option>지적과</option>
+                                    <option>전기과</option>
+                                    <option>전자공학과</option>
+                                    <option>컴퓨터공학과</option>
+                                    <option>정보통신공학과</option>
+                                    <option>소프트웨어콘텐츠과</option>
+                                    <option>인터넷응용보안공학과</option>
+                                </optgroup>
+                                <optgroup label="경영/사회학부">
+                                    <option>경영학과</option>
+                                    <option>세무회계과</option>
+                                    <option>부동산경영과</option>
+                                    <option>사회복지과</option>
+                                    <option>행정과</option>
+                                </optgroup>
+                                <optgroup label="어문/교육학부">
+                                    <option>영어과</option>
+                                    <option>중국비즈니스과</option>
+                                    <option>일본어과</option>
+                                    <option>문예창작과</option>
+                                    <option>유아교육과</option>
+                                    <option>청소년교육복지과</option>
+                                </optgroup>
+                                <optgroup label="예술">
+                                    <option>산업디자인과</option>
+                                    <option>패션텍스타일세라믹과</option>
+                                    <option>커뮤니케이션디자인과</option>
+                                    <option>클래식공연예술과</option>
+                                    <option>실용음악과</option>
+                                    <option>사회체육과</option>
+                                    <option>연극영상학과</option>
+                                    <option>뷰티매니지먼트과</option>
+                                    <option>보건의료정보과</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="num">학번</label></td>
+                        <td><input id="num" type="text" name="num"/></td>
+                    </tr>
+                </table>
+                <input type="submit" value="저장">
+                <button type="button" onclick="location.href='/grade'">성적입력</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

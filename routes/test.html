@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <script>
+    function change1Step(fr) {
+      if (fr == "전공") {
+        sub = new Array("--과목선택--", "데이터베이스", "C언어", "네트워크", "IoT", "홈네트워크", "정보통신기기", "객체지향언어실습");
+        ssub = new Array("--과목선택--", "데이터베이스", "C언어", "네트워크", "IoT", "홈네트워크", "정보통신기기", "객체지향언어실습");
+      }
+
+      else if (fr == "교양") {
+        sub = new Array("--과목선택--", "생활영어", "생활중국어", "대중음악의이해", "문제해결능력", "조직이해능력", "미술의이해");
+        ssub = new Array("--과목선택--", "생활중국어", "대중음악의이해", "문제해결능력", "조직이해능력", "미술의이해");
+      }
+
+        for(i=0; i<form1.subject.length; i++){
+          form1.subject.options[i] = null;
+        }
+        for(i=0; i<form1.grade.length; i++){
+          form1.grade.options[i] = null;
+        }
+        form1.grade.options[0] = new Option("학점", "학점");
+        for(i=0; i<sub.length; i++){
+          form1.subject.options[i] = new Option(sub[i], ssub[i]);
+        }
+      }
+
+
+    function changes2Step(fr){
+        //전공 선택
+        if(fr=="데이터베이스" || fr=="C언어" || fr=="네트워크" || fr=="IoT" || fr=="홈네트워크" || fr=="정보통신기기" || fr=="객체지향언어실습"){
+          sub = new Array("--학점 선택--", 3);
+          ssub = new Array("--학점 선택--", 3);
+        }
+
+        //교양 선택
+        else if(fr=="생활영어" || fr=="생활중국어" || fr=="대중음악의이해" || fr=="문제해결능력" || fr=="조직이해능력" || fr=="미술의이해"){
+          sub = new Array("--학점 선택--", 2);
+          ssub = new Array("--학점 선택--", 2);
+        }
+
+        for(i=0; i<form1.grade.length; i++){
+          form1.grade.options[i] = null;
+        }
+
+        for(i=0; i<sub.length; i++){
+          form1.grade.options[i] = new Option(sub[i], ssub[i]);
+        }
+    }
+
+  </script>
+  <head>
+    <meta charset="utf-8">
+    <title>Student Grade</title>
+    <style>
+      table{
+        width:60%;
+        height: 100px;
+        margin: auto;
+        text-align: center;
+      }
+      table, th, td {
+        border: 1px solid #bcbcbc;
+      }
+      #button1 {
+        position: absolute;
+        left: 45%;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>Student Grade</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>구분</th>
+          <th>과목명</th>
+          <th>학점</th>
+          <th>점수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <form action ="/grade", method="POST" name="form1">
+        <tr>
+          <th>1</th>
+          <td><select name="major" onchange="change1Step(value)">
+              <option>--구분--</option>
+              <option value="전공">전공</option>
+              <option value="교양">교양</option>
+          </select></td>
+          <td><select name="subject" onchange="changes2Step(value)">
+              <option>--과목선택--</option>
+          </select></td>
+          <td><select name="grade">
+            <option>--점수선택--</option>
+          </select></td>
+          <td><input type="text" name="hakjum" maxlength="3"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="button1">
+      <button type="submit">저장</button>
+      <button type="button" onclick="location.href='/home'">학생 정보 화면으로</button>
+    </div>
+  </form>
+  </body>
+</html>
